@@ -1,0 +1,41 @@
+<h1>Listing days</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Child</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @days.each do |day| %>
+      <tr>
+        <td><%= day.child_id %></td>
+        <td><%= day.monday %></td>
+        <td><%= day.tuesday %></td>
+        <td><%= day.wednesday %></td>
+        <td><%= day.thursday %></td>
+        <td><%= day.friday %></td>
+        <td><%= day.saturday %></td>
+        <td><%= day.sunday %></td>
+        <td><%= link_to 'Show', day %></td>
+        <td><%= link_to 'Edit', edit_day_path(day) %></td>
+        <td><%= link_to 'Destroy', day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Day', new_day_path %>

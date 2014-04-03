@@ -1,0 +1,13 @@
+
+  <div>
+    <%= ff.label :first_name %>
+    <%= ff.text_field :first_name %>
+  </div>
+    <div>
+    <%= ff.label :last_name %>
+    <%= ff.text_field :last_name %>
+  </div>
+
+  <%= ff.fields_for :days do |builder| %>
+    <%= render 'day_fields', f: builder %>
+  <% end %>
