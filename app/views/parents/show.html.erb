@@ -23,7 +23,11 @@
 <% @parent.children.each do |child| %>
   <%= child.first_name %>
   <%= child.last_name %>
+  <% child.days.each do |day| %>
+    <%= day.monday %>
+  <% end %>
 <% end %>
+
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |
 <%= link_to 'Back', parents_path %>
