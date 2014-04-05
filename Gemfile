@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 gem 'haml'
 gem "nested_form"
+gem "cocoon"
+gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

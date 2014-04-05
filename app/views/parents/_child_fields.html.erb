@@ -1,14 +1,16 @@
 
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-    <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="nested-fields">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= link_to_remove_association "remove child", f %>
+
+    <%= f.simple_fields_for :days do |day| %>
+      <%= render 'day_fields', f: day %>
+      <%= link_to_add_association 'add day', f, :days %>
+    <% end %>
   </div>
 
-  <%= f.fields_for :days do |builder| %>
-    <%= render 'day_fields', f: builder %>
-  <% end %>
-  <%= link_to_add_fields "Add Days", f, :days %>
+
+
+
+

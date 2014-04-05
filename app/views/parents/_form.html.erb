@@ -1,44 +1,27 @@
-<%= nested_form_for @parent do |f| %>
-  <% if @parent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
-
-      <ul>
-      <% @parent.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for @parent do |f| %>
+<%= render 'errors' %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.input :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.input :last_name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.input :address %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.number_field :phone %>
+    <%= f.input :phone %>
   </div>
 
   <h3>Add Child</h3>
 
-  <%= f.fields_for :children do |child| %>
-    <%= child.label :first_name %>
-    <%= child.text_field :first_name %>
-    <%= child.label :last_name %>
-    <%= child.text_field :last_name %>
-    <%= child.link_to_remove "Remove this child" %> 
+  <%= f.simple_fields_for :children do |child| %>
+    <%= render 'child_fields', f: child %>
+    <div class="links">
+      <%= link_to_add_association 'add child', f, :children %>
+    </div> 
   <% end %>
-
-  <p><%= f.link_to_add "Add a child", :children %></p> 
 
   <div class="actions">
       <%= f.submit %>

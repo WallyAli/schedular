@@ -31,6 +31,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -140,6 +141,9 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -170,6 +174,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cocoon
   coffee-rails (~> 4.0.0)
   haml
   jazz_hands
@@ -179,6 +184,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc
+  simple_form
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
