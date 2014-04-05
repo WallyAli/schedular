@@ -1,6 +1,9 @@
 <fieldset>
-  <%= f.label :monday, "schedule" %>
-  <%= f.text_field :monday %>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "remove days", '#', class: "remove_fields" %>
+<%= f.fields_for :days do |day| %>
+    <%= day.label :monda %>
+    <%= day.text_field :monday %>
+    <%= day.label :tuesday %>
+    <%= day.text_field :tuesday %>
+    <%= day.link_to_remove "Remove this day" %> 
+  <% end %>
 </fieldset>

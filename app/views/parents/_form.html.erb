@@ -1,4 +1,4 @@
-<%= form_for @parent do |f| %>
+<%= nested_form_for @parent do |f| %>
   <% if @parent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
@@ -30,14 +30,18 @@
 
   <h3>Add Child</h3>
 
-  <%= f.fields_for :children do |builder| %>
-  <div>
-    <%= render 'child_fields', f: builder %>
-  </div>
-<% end %>
-<%= link_to_add_fields "Add Child", f, :children %>  
+  <%= f.fields_for :children do |child| %>
+    <%= child.label :first_name %>
+    <%= child.text_field :first_name %>
+    <%= child.label :last_name %>
+    <%= child.text_field :last_name %>
+    <%= child.link_to_remove "Remove this child" %> 
+  <% end %>
 
-<div class="actions">
-    <%= f.submit %>
+  <p><%= f.link_to_add "Add a child", :children %></p>  
+
+  <div class="actions">
+      <%= f.submit %>
   </div>
+
 <% end %>

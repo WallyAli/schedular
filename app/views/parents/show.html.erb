@@ -20,13 +20,14 @@
   <%= @parent.phone %>
 </p>
 
+<ul>
 <% @parent.children.each do |child| %>
-  <%= child.first_name %>
-  <%= child.last_name %>
+  <li><%= child_full_name(child) %></li>
   <% child.days.each do |day| %>
-    <%= day.monday %>
+    <li><%= day.monday %><li>
   <% end %>
 <% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |
