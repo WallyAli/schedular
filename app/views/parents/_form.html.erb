@@ -1,17 +1,19 @@
 <%= simple_form_for @parent do |f| %>
 <%= render 'errors' %>
-
+  <fieldset>
     <%= f.input :first_name, maxlength: 30 %>
     <%= f.input :last_name, maxlength: 30 %>
     <%= f.input :address %>
     <%= f.input :phone %>
+  </fieldset>
 
   <h3>Add Child</h3>
 
   <%= f.simple_fields_for :children do |child| %>
     <%= render 'child_fields', f: child %>
     <div class="links">
-      <%= link_to_add_association 'add child', f, :children %>
+      <p><%= link_to_add_association 'add child', f, :children %></p>
+      <p><%= link_to_add_association 'add day', f, :days %></p>
     </div> 
   <% end %>
 
