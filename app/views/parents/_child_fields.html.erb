@@ -1,7 +1,7 @@
 
   <div class="nested-fields">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
+    <%= f.input :first_name, maxlength: 30 %>
+    <%= f.input :last_name, maxlength: 30 %>
     <%= link_to_remove_association "remove child", f %>
 
     <%= f.simple_fields_for :days do |day| %>

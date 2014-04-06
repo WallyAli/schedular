@@ -1,18 +1,10 @@
 <%= simple_form_for @parent do |f| %>
 <%= render 'errors' %>
 
-  <div class="field">
-    <%= f.input :first_name %>
-  </div>
-  <div class="field">
-    <%= f.input :last_name %>
-  </div>
-  <div class="field">
+    <%= f.input :first_name, maxlength: 30 %>
+    <%= f.input :last_name, maxlength: 30 %>
     <%= f.input :address %>
-  </div>
-  <div class="field">
     <%= f.input :phone %>
-  </div>
 
   <h3>Add Child</h3>
 
