@@ -4,14 +4,14 @@
     <%= f.input :first_name, maxlength: 30 %>
     <%= f.input :last_name, maxlength: 30 %>
     <%= f.input :birthday, maxlength: 30 %>
-    <%= f.input :mon, maxlength: 30 %>
-    <%= f.input :tue, maxlength: 30 %>
-    <%= f.input :wed, maxlength: 30 %>
-    <%= f.input :thu, maxlength: 30 %>
-    <%= f.input :fri, maxlength: 30 %>
-    <%= f.input :sat, maxlength: 30 %>
-    <%= f.input :sun, maxlength: 30 %>
-    <%= link_to_remove_association "remove child", f %>
+    <p><%= f.select :mon, options_for_select(%w[Mon Tue Wed Thu Fri Sat Sun])%></p>
+    <p><%= f.select :tue, options_for_select(week) %></p>
+    <p><%= f.input :wed, maxlength: 30 %></p>
+    <p><%= f.input :thu, maxlength: 30 %></p>
+    <p><%= f.input :fri, maxlength: 30 %></p>
+    <p><%= f.input :sat, maxlength: 30 %></p>
+    <p><%= f.input :sun, maxlength: 30 %></p>
+    <p><%= link_to_remove_association "remove child", f %>
   </fieldset>
 
 
