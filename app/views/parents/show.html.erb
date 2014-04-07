@@ -23,16 +23,14 @@
 <ul>
 <% @parent.children.each do |child| %>
   <li><%= child_full_name(child) %></li>
-  <% child.days.each do |day| %>
-    <li><%= day.monday %><li>
-    <li><%= day.tuesday %><li>
-    <li><%= day.wednesday %><li>
-    <li><%= day.thursday %><li>
-    <li><%= day.friday %><li>
-    <li><%= day.saturday %><li>
-    <li><%= day.sunday %><li>
-
-  <% end %>
+  <li><%= child.birthday %></li>
+  <li><%= child.mon %><li>
+  <li><%= child.tue %><li>
+  <li><%= child.wed %><li>
+  <li><%= child.thu %><li>
+  <li><%= child.fri %><li>
+  <li><%= child.sat %><li>
+  <li><%= child.sun %><li>
 <% end %>
 </ul>
 

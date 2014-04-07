@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20140407023103_add_schedule_to_child.rb
