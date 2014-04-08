@@ -15,4 +15,12 @@
   <%= @child.birthday %>
 </p>
 
+<p>
+  <strong>Schedule:</strong>
+    <% @child.schedules.each do |schedule| %>
+      <p><%= schedule.name %></p>
+    <% end %>
+</p>
+
 <%= link_to 'Edit', edit_child_path(@child) %> |
+

@@ -6,14 +6,10 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag :defaults, "nested_form" %>
   <%= javascript_include_tag :cocoon %>
-
-<!-- Include the plugin's CSS and JS: -->
-<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
-
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to 'Home', root_path %>
 
 <%= yield %>
 

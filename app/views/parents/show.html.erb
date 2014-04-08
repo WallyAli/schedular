@@ -20,13 +20,14 @@
   <%= @parent.phone %>
 </p>
 
-
+<ol>
 <% @parent.children.each do |child| %>
-  <p><%= child_full_name(child) %></p>
+  <li><%= link_to child_full_name(child), child_path(child) %></li>
   <% child.schedules.each do |schedule| %>
-    <%= schedule.name %>
+    <p><%= schedule.name %></p>
   <% end %>
 <% end %>
+</ol>
 
 
 
