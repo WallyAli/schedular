@@ -23,14 +23,9 @@
 
 <% @parent.children.each do |child| %>
   <p><%= child_full_name(child) %></p>
-  <p><%= child.birthday %></p>
-  <p><%= child.mon %><p>
-  <p><%= child.tue %><p>
-  <p><%= child.wed %><p>
-  <p><%= child.thu %><p>
-  <p><%= child.fri %><p>
-  <p><%= child.sat %><p>
-  <p><%= child.sun %><p>
+  <% child.schedules.each do |schedule| %>
+    <%= schedule.name %>
+  <% end %>
 <% end %>
 
 

@@ -4,7 +4,6 @@ class Child < ActiveRecord::Base
 	validates_presence_of :first_name
 	validates_presence_of :last_name
 
-	has_many :days
-	accepts_nested_attributes_for :days, allow_destroy: true, 
-								  :reject_if => :all_blank
+	has_and_belongs_to_many :schedules
+	accepts_nested_attributes_for :schedules, allow_destroy: true
 end

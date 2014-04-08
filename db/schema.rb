@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407033927) do
+ActiveRecord::Schema.define(version: 20140408070312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "child_schedules", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "children", force: true do |t|
     t.string   "first_name"
@@ -23,34 +28,27 @@ ActiveRecord::Schema.define(version: 20140407033927) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
-    t.string   "schedule",   array: true
-    t.string   "mon"
-    t.string   "tue"
-    t.string   "wed"
-    t.string   "thu"
-    t.string   "fri"
-    t.string   "sat"
-    t.string   "sun"
   end
 
-  create_table "days", force: true do |t|
-    t.integer  "child_id"
-    t.text     "monday"
-    t.text     "tuesday"
-    t.text     "wednesday"
-    t.text     "thursday"
-    t.text     "friday"
-    t.text     "saturday"
-    t.text     "sunday"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "children_schedules", id: false, force: true do |t|
+    t.integer "child_id",    null: false
+    t.integer "schedule_id", null: false
   end
+
+  add_index "children_schedules", ["child_id", "schedule_id"], name: "index_children_schedules_on_child_id_and_schedule_id", using: :btree
+  add_index "children_schedules", ["schedule_id", "child_id"], name: "index_children_schedules_on_schedule_id_and_child_id", using: :btree
 
   create_table "parents", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.text     "address"
     t.integer  "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

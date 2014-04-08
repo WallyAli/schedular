@@ -1,6 +1,6 @@
 class Parent < ActiveRecord::Base
 	has_many :children
-	has_many :days, through: :children
+	has_many :schedules, through: :children
 
 	validates_presence_of :first_name
 	validates_presence_of :last_name
