@@ -1,9 +1,9 @@
 Scheduler::Application.routes.draw do
   
-  resources :days
+  resources :schedules
   resources :parents, shallow: true do 
     resources :children, shallow: true do
-      resources :days
+      resources :schedules
     end
   end
 

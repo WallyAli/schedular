@@ -30,6 +30,8 @@ GEM
     awesome_print (1.2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.3.0.1)
+      railties (>= 3.0)
     builder (3.1.4)
     cocoon (1.2.6)
     coderay (1.1.0)
@@ -80,6 +82,8 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.2.0)
+      railties (>= 3.2.16)
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -174,12 +178,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datepicker-rails
   cocoon
   coffee-rails (~> 4.0.0)
   haml
   jazz_hands
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   nested_form
   pg
   rails (= 4.0.3)

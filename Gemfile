@@ -6,6 +6,8 @@ gem 'haml'
 gem "nested_form"
 gem "cocoon"
 gem 'simple_form'
+gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'

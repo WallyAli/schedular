@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require jquery_nested_form
+//= require jquery.ui.all
+ //= require bootstrap-datepicker
+ //= require jquery_nested_form
 //= require cocoon
+//= require_tree .
+
