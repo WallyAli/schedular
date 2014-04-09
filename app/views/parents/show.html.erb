@@ -17,7 +17,7 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @parent.phone %>
+  <%= number_to_phone(@parent.phone, area_code: true) %>
 </p>
 
 <ol>
@@ -32,4 +32,5 @@
 
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |
-<%= link_to 'Back', parents_path %>
+<%= link_to 'Back', parents_path %> |
+<%= link_to 'Destroy', @parent, method: :delete, data: { confirm: 'Are you sure?' } %>

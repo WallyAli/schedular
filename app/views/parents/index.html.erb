@@ -6,6 +6,9 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Address</th>
+        <th>city</th>
+        <th>State</th>
+        <th>Zip-Code</th>
         <th>Phone</th>
         <th></th>
         <th></th>
@@ -16,10 +19,13 @@
     <tbody>
       <% @parents.each do |parent| %>
         <tr>
-          <td ><%= parent.first_name %></td>
-          <td><%= parent.last_name %></td>
+          <td ><%= link_to parent.first_name, parent %></td>
+          <td><%= link_to parent.last_name, parent %></td>
           <td><%= parent.address %></td>
-          <td><%= parent.phone %></td>
+          <td><%= parent.city %></td>
+          <td><%= parent.state %></td>
+          <td><%= parent.zipcode %></td>
+          <td><%= number_to_phone(parent.phone, area_code: true) %></td>
         </tr>
       <% end %>
     </tbody>
