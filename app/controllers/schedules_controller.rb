@@ -6,5 +6,6 @@ class SchedulesController < ApplicationController
 
 	def show
 		@schedule = Schedule.find(params[:id])
+		@parent = @schedule.children.parent
 	end
 end

@@ -2,10 +2,6 @@
 <% @schedules.each do |schedule| %>
   <p>
     <strong><%= link_to schedule.name, schedule %></strong>
-    <% schedule.children.each do |child| %>
-      <p><%= child_full_name(child) %></p>
-    <% end %>
-
   </p>
 <% end %>
 

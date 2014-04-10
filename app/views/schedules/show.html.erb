@@ -1,5 +1,24 @@
-<strong><%= @schedule.name %></strong>
 
-<% @schedule.children.each do |child| %>
-  <p><%= child_full_name(child) %></p>
-<% end %>
+<h1>Schedule</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Time-In</th>
+        <th>Time-Out</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <strong><%= @schedule.name %></strong>
+      <% @schedule.children.each do |child| %>
+        <tr>
+          <td ><%= link_to child.first_name, child %></td>
+          <td ><%= link_to child.last_name, child %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
