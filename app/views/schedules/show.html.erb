@@ -1,0 +1,5 @@
+<strong><%= @schedule.name %></strong>
+
+<% @schedule.children.each do |child| %>
+  <p><%= child_full_name(child) %></p>
+<% end %>
