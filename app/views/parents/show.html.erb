@@ -1,33 +1,54 @@
-<p id="notice"><%= notice %></p>
+<h4>Family Information</h4>
 
-<p>
-  <strong>First name:</strong>
-  <%= @parent.first_name %>
-</p>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>city</th>
+        <th>State</th>
+        <th>Zip-Code</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td ><%= @parent.first_name %></td>
+          <td><%= @parent.last_name %></td>
+          <td><%= @parent.address %></td>
+          <td><%= @parent.city %></td>
+          <td><%= @parent.state %></td>
+          <td><%= @parent.zipcode %></td>
+          <td><%= number_to_phone(@parent.phone, area_code: true) %></td>
+        </tr>
+     
+    </tbody>
+  </table>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @parent.last_name %>
-</p>
+<h4>Children Info.</h4>
+<div class="panel panel-default ">
+  <div class="panel-heading">
+    <div clas= "panel-body">
+  <ol class="list-group">
+    <% @parent.children.each do |child| %>
+      <div class="list-group-item">
+        <li><%= link_to child_full_name(child), child_path(child) %></li>
+      
+      <% child.schedules.each do |schedule| %>
+        <%= schedule.name %>
+      <% end %>
+      </div>
+    <% end %>
+  </ol>
+  <div>
+</div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @parent.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= number_to_phone(@parent.phone, area_code: true) %>
-</p>
-
-<ol>
-<% @parent.children.each do |child| %>
-  <li><%= link_to child_full_name(child), child_path(child) %></li>
-  <% child.schedules.each do |schedule| %>
-    <p><%= schedule.name %></p>
-  <% end %>
-<% end %>
-</ol>
+ 
 
 
 
