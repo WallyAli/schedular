@@ -1,26 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @child.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @child.last_name %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @child.birthday %>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
+<h3>Child Info.</h3>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>First name</th> 
+        <th>Last name</th> 
+        <th>Age</th>
+        <th>Schedule</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @child.first_name %></td>
+        <td><%= @child.last_name %></td>
+        <td><%= time_ago_in_words(@child.birthday) %></td>
+     
+  
     <% @child.schedules.each do |schedule| %>
-      <p><%= schedule.name %></p>
+      <td><%= schedule.name %></td>
     <% end %>
-</p>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
 
 <%= link_to 'Edit', edit_child_path(@child) %> |
 

@@ -29,21 +29,21 @@
   </table>
 </div>
 
-<h4>Children Info.</h4>
+<h4>Children</h4>
 <div class="panel panel-default ">
   <div class="panel-heading">
     <div clas= "panel-body">
-  <ol class="list-group">
+  <div class="list-group">
     <% @parent.children.each do |child| %>
       <div class="list-group-item">
-        <li><%= link_to child_full_name(child), child_path(child) %></li>
+        <h4><%= link_to child_full_name(child), child_path(child) %></h4>
       
       <% child.schedules.each do |schedule| %>
         <%= schedule.name %>
       <% end %>
       </div>
     <% end %>
-  </ol>
+  </div>
   <div>
 </div>
 </div>

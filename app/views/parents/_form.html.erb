@@ -1,6 +1,6 @@
-<%= simple_form_for @parent do |f| %>
+<%= simple_form_for @parent, input_html: { class: "form-control center" } do |f| %>
 <%= render 'errors' %>
-  <fieldset>
+   <div class="form-group">
     <%= f.input :first_name, maxlength: 30 %>
     <%= f.input :last_name, maxlength: 30 %>
     <%= f.input :address %>
@@ -8,7 +8,7 @@
     <%= f.input :state %>
     <%= f.input :zipcode %>
     <%= f.input :phone %>
-  </fieldset>
+  </div>
 
   <h3>Add Child</h3>
 
