@@ -1,12 +1,12 @@
 
   <fieldset class="nested-fields">
 
-    <%= f.input :first_name, maxlength: 30 %>
-    <%= f.input :last_name, maxlength: 30 %>
-    <%= f.input :birthday %>
+    <%= f.input :first_name, input_html: {class: 'field'} %>
+    <%= f.input :last_name, input_html: {class: 'field'} %>
+    <%= f.input :birthday, input_html: {class: 'field'} %>
     <p><%= link_to_remove_association "remove child", f %></p>
 
-  <%= f.association :schedules, input_html: { maxlength: 100 } %>
+  <%= f.association :schedules, input_html: { maxlength: 100, class: 'field' } %>
 
 </fieldset>
 
