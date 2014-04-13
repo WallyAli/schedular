@@ -62,8 +62,7 @@ group :test do
   gem 'selenium-webdriver', '~> 2.40.0'
 end
 
-group :production, :staging do
-  
+group :production do
   gem 'rails_12factor'
 end
 # Use ActiveModel has_secure_password
