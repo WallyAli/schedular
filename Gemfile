@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 gem 'haml'
@@ -40,7 +40,31 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec', '~> 3.0.0.beta2'
+  gem 'annotate', ">=2.6.0"
   gem 'jazz_hands'
+  gem 'better_errors'
+  gem 'quiet_assets'
+  gem "factory_girl_rails", "~> 4.0"
+end
+
+group :test do
+  gem 'spork-rails'
+  gem 'guard', '~> 2.1'
+  gem 'guard-rspec', '~> 4.2.8'
+  gem 'webrat'
+  gem 'faker', '~> 1.3.0'
+  gem 'capybara', '~> 2.2.1'
+  gem 'database_cleaner', '~> 1.2.0'
+  gem 'launchy', '~> 2.4.2'
+  gem 'selenium-webdriver', '~> 2.40.0'
+end
+
+group :production, :staging do
+  
+  gem 'rails_12factor'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
