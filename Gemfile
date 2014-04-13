@@ -39,7 +39,7 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'rspec', '~> 3.0.0.beta2'
   gem 'annotate', ">=2.6.0"
