@@ -8,6 +8,3 @@ jQuery ->
       collapsible: true
     });
 
-    $( "#datepicker" ).datepicker({
-      showButtonPanel: true
-    });

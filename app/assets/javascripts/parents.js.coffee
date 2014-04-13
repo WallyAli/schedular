@@ -4,14 +4,21 @@
 
 jQuery ->
   $('form').on 'click', '.add_fields', (event) ->
-    time = new Date().getTime()
+    time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
-    event.preventDefault()
+    event.preventDefault();
 
     $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
     $(this).closest('fieldset').hide()
-    event.preventDefault()
+    event.preventDefault();
 
 
+    
+  	$("input.datepicker").each (i) ->
+    $(this).datepicker
+      altFormat: "yy-mm-dd"
+      dateFormat: "mm/dd/yy"
+      altField: $(this).next();
+      
