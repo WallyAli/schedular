@@ -7,4 +7,7 @@ jQuery ->
     $( "#accordion" ).accordion({
       collapsible: true
     });
- 
+
+    $( "#datepicker" ).datepicker({
+      showButtonPanel: true
+    });
