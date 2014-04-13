@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
-gem 'haml'
 gem "nested_form"
 gem "cocoon"
 gem 'simple_form'
