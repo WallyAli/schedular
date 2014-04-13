@@ -1,8 +1,14 @@
 
-<h3>click to see all children schedule for specific day</h3>
-<% @schedules.each do |schedule| %>
-  <p>
-    <strong><%= link_to schedule.name, schedule %></strong>
-  </p>
-<% end %>
+<div id="accordion">
+  <h3>
+    <% @schedules.each do |schedule| %>
+      <strong><%= schedule.name %></strong>
+  </h3>
+  <h3>
+    <% schedule.children.each do |child| %>
+      <p><%= child_full_name(child) %></p>
+    <% end %>
+  </h3>
+  <% end %>
+</div>
 
