@@ -23,5 +23,5 @@ jQuery ->
     altField: $(this).next();
 
 jQuery ->
-  $("#schedule").dataTable();
+  $(".schedule").dataTable();
     
