@@ -15,10 +15,13 @@ jQuery ->
     event.preventDefault();
 
 
+jQuery ->    
+	$("input.datepicker").each (i) ->
+  $(this).datepicker
+    altFormat: "yy-mm-dd"
+    dateFormat: "mm/dd/yy"
+    altField: $(this).next();
+
+jQuery ->
+  $("#schedule").dataTable();
     
-  	$("input.datepicker").each (i) ->
-    $(this).datepicker
-      altFormat: "yy-mm-dd"
-      dateFormat: "mm/dd/yy"
-      altField: $(this).next();
-      

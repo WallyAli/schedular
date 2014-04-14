@@ -17,5 +17,6 @@
  //= require bootstrap-datepicker
  //= require jquery_nested_form
 //= require cocoon
+//= require dataTables/jquery.dataTables
 //= require_tree .
 

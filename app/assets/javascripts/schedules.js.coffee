@@ -8,3 +8,6 @@ jQuery ->
       collapsible: true
     });
 
+$('.datatable').dataTable({
+  "sPaginationType": "bootstrap"
+});

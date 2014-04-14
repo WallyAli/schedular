@@ -7,6 +7,7 @@ gem "cocoon"
 gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 
 # Use sqlite3 as the database for Active Record
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'quiet_assets'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker', '~> 1.3.0'
 end
 
 group :test do
