@@ -2,10 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+makeAccordion = ->
+	jQuery ->
+	    $( "#accordion" ).accordion({
+	      collapsible: true
+	    });
+
 jQuery ->
-    $( "#accordion" ).accordion({
-      collapsible: true
-    });
+	makeAccordion
+
+jQuery(document).on('page:load', makeAccordion)
 
 makeDataTable = ->
 	$('.datatable').dataTable({
