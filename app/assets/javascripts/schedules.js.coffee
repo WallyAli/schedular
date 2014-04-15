@@ -3,11 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-
     $( "#accordion" ).accordion({
       collapsible: true
     });
 
-$('.datatable').dataTable({
-  
-});
+makeDataTable = ->
+	$('.datatable').dataTable({
+		
+	});
+
+jQuery ->
+	makeDataTable	
+
+jQuery(document).on('page:load', makeDataTable)

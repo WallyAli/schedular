@@ -20,12 +20,16 @@ makeDatePicker = ->
       altFormat: "yy-mm-dd"
       dateFormat: "mm/dd/yy"
       altField: $(this).next();
-
+      
 jQuery ->
-  makeDatePicker()
+  makeDatePicker();
 
 jQuery(document).on('page:load', makeDatePicker)
 
-jQuery ->
+makeSchedule = ->
   $(".schedule").dataTable();
     
+jQuery ->
+  makeSchedule();
+
+jQuery(document).on('page:load', makeSchedule)
