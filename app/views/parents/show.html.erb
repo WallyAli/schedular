@@ -37,6 +37,7 @@
     <% @parent.children.each do |child| %>
       <div class="list-group-item">
         <h4><%= link_to child_full_name(child), child_path(child) %></h4>
+        <%= child.birthday %>
       
       <% child.schedules.each do |schedule| %>
         <%= schedule.name %>

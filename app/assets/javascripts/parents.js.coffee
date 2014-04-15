@@ -18,7 +18,7 @@ makeDatePicker = ->
   $("input.datepicker").each (i) ->
     $(this).datepicker
       altFormat: "yy-mm-dd"
-      dateFormat: "mm/dd/yy"
+      dateFormat: 'dd-mm-YYYY'
       altField: $(this).next();
       
 jQuery ->
