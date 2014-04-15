@@ -9,5 +9,5 @@ jQuery ->
     });
 
 $('.datatable').dataTable({
-  "sPaginationType": "bootstrap"
+  
 });

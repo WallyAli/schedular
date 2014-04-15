@@ -14,13 +14,17 @@ jQuery ->
     $(this).closest('fieldset').hide()
     event.preventDefault();
 
+makeDatePicker = ->
+  $("input.datepicker").each (i) ->
+    $(this).datepicker
+      altFormat: "yy-mm-dd"
+      dateFormat: "mm/dd/yy"
+      altField: $(this).next();
 
-jQuery ->    
-	$("input.datepicker").each (i) ->
-  $(this).datepicker
-    altFormat: "yy-mm-dd"
-    dateFormat: "mm/dd/yy"
-    altField: $(this).next();
+jQuery ->
+  makeDatePicker()
+
+jQuery(document).on('page:load', makeDatePicker)
 
 jQuery ->
   $(".schedule").dataTable();
