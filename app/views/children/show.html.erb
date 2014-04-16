@@ -1,4 +1,26 @@
 <h3>Child Info.</h3>
+
+
+
+<div id="attendances">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>   
+    <%= link_to ">", date: @date.next_month %>
+  </h2> 
+
+    <%= attendance @date do |date| %>
+      <%= date.day %>
+    <% if @attendances_by_date[date] %>
+    <ul>
+      <% @attendances_by_date[date].each do |attendance| %>
+        <li><%= attendance.date %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -19,6 +41,8 @@
     <% @child.schedules.each do |schedule| %>
       <td><%= schedule.name %></td>
     <% end %>
+
+
 
       </tr>
     </tbody>

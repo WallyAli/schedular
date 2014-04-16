@@ -1,9 +1,13 @@
 Scheduler::Application.routes.draw do
+
   
+  
+
   resources :schedules
   resources :parents, shallow: true do 
     resources :children, shallow: true do
       resources :schedules
+      resources :attendances
     end
   end
 

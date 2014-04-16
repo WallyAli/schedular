@@ -6,4 +6,7 @@ class Child < ActiveRecord::Base
 
 	has_and_belongs_to_many :schedules
 	accepts_nested_attributes_for :schedules, allow_destroy: true
+
+	has_many :attendances
+	
 end
