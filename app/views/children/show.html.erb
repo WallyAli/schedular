@@ -14,8 +14,8 @@
     <% if @attendances_by_date[date] %>
     <ul>
       <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= attendance.time_in %></li>
-        <li><%= attendance.time_out %></li>
+        <li><%= (attendance.time_in).strftime("%I:%M %p") %></li>
+        <li><%= (attendance.time_out).strftime("%I:%M %p") %></li>
       <% end %>
     </ul>
     <% end %>

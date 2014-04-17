@@ -2,12 +2,12 @@
 
 <p>
   <strong>Time in:</strong>
-  <%= @attendance.time_in %>
+  <%= (@attendance.time_in).strftime("%B %e, %Y at %I:%M %p") %>
 </p>
 
 <p>
   <strong>Time out:</strong>
-  <%= @attendance.time_out %>
+  <%= (@attendance.time_out).strftime("%B %e, %Y at %I:%M %p") %>
 </p>
 
 <p>
