@@ -1,3 +1,23 @@
+<div id="attendances">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>   
+    <%= link_to ">", date: @date.next_month %>
+  </h2> 
+
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @attendances_by_date[date] %>
+    <ul>
+      <% @attendances_by_date[date].each do |attendance| %>
+        <li><%= attendance.time_in %></li>
+        <li><%= attendance.time_out %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+</div>
+
 <h1>Listing attendances</h1>
 
 <table>
@@ -17,7 +37,7 @@
       <tr>
         <td><%= attendance.time_in %></td>
         <td><%= attendance.time_out %></td>
-        <td><%= attendance.child_id %></td>
+        <td><%= attendance.date %></td>
         <td><%= link_to 'Show', attendance %></td>
         <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
         <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +48,3 @@
 
 <br>
 
-<%= link_to 'New Attendance', new_attendance_path %>

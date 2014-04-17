@@ -9,12 +9,13 @@
     <%= link_to ">", date: @date.next_month %>
   </h2> 
 
-    <%= attendance @date do |date| %>
-      <%= date.day %>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
     <% if @attendances_by_date[date] %>
     <ul>
       <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= attendance.date %></li>
+        <li><%= attendance.time_in %></li>
+        <li><%= attendance.time_out %></li>
       <% end %>
     </ul>
     <% end %>
@@ -36,21 +37,19 @@
         <td><%= @child.first_name %></td>
         <td><%= @child.last_name %></td>
         <td><%= @child.birthday %></td>
+        <td><%= @child.time_in %></td>
      
-  
     <% @child.schedules.each do |schedule| %>
       <td><%= schedule.name %></td>
     <% end %>
 
-
-
+    <% @child.attendances.each do |attendance| %>
+      <%= attendance.date %>
+    <% end %>
       </tr>
     </tbody>
   </table>
 </div>
-
-
-
 
 <%= link_to 'Edit', edit_child_path(@child) %> |
 

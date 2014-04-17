@@ -11,8 +11,8 @@ class ChildrenController < ApplicationController
   # GET /children/1.json
   def show
     @attendances = @child.attendances
-    @attendances_by_date = @attendances.group_by(&:time_in)
-     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @attendances_by_date = @attendances.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /children/new

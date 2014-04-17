@@ -4,15 +4,11 @@ module ChildrenHelper
 		[child.first_name, child.last_name].join(' ')
 	end
 
-	def week
-		%w[mon tue wed thu fri sat sun]
-	end
+  def calendar(date = Date.today, &block)
+    Calendar.new(self, date, block).table
+  end
 
-	def attendance(date = Date.today, &block)
-    	Attendance.new(self, date, block).table
-  	end
-
-  class Attendance < Struct.new(:view, :date, :callback)
+  class Calendar < Struct.new(:view, :date, :callback)
     HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
     START_DAY = :sunday
 

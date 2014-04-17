@@ -6,7 +6,9 @@ class AttendancesController < ApplicationController
   # GET /attendances.json
   def index
     @child = Child.find(params[:child_id])
-    @attendances = @child.attendances.all
+    @attendances = @child.attendances
+    @attendances_by_date = @attendances.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /attendances/1
