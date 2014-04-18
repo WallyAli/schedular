@@ -1,5 +1,29 @@
 <h3>Child Info.</h3>
-
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>First name</th> 
+        <th>Last name</th> 
+        <th>Age</th>
+        <th>Schedule</th>
+        <th><%=link_to 'new attendance', new_child_attendance_path(@child) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @child.first_name %></td>
+        <td><%= @child.last_name %></td>
+        <td><%= @child.birthday %></td>
+        <td><%= @child.time_in %></td>
+     
+        <% @child.schedules.each do |schedule| %>
+          <td><%= schedule.name %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 <div id="attendances">
@@ -14,41 +38,12 @@
     <% if @attendances_by_date[date] %>
     <ul>
       <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= (attendance.time_in).strftime("%I:%M %p") %></li>
-        <li><%= (attendance.time_out).strftime("%I:%M %p") %></li>
+        <li><%= time_format(attendance.time_in) %></li>
+        <li><%= time_format(attendance.time_out) %></li>
       <% end %>
     </ul>
     <% end %>
   <% end %>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr class="info">
-        <th>First name</th> 
-        <th>Last name</th> 
-        <th>Age</th>
-        <th>Schedule</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @child.first_name %></td>
-        <td><%= @child.last_name %></td>
-        <td><%= @child.birthday %></td>
-        <td><%= @child.time_in %></td>
-     
-    <% @child.schedules.each do |schedule| %>
-      <td><%= schedule.name %></td>
-    <% end %>
-
-    <% @child.attendances.each do |attendance| %>
-      <%= attendance.date %>
-    <% end %>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <%= link_to 'Edit', edit_child_path(@child) %> |
