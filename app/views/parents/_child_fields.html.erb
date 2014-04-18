@@ -1,13 +1,12 @@
 
   <fieldset class="nested-fields">
 
-    <%= f.input :first_name, input_html: {class: 'field'} %>
-    <%= f.input :last_name, input_html: {class: 'field'} %>
-    <%= f.input :birthday, :as => :datepicker %>
+    <%= f.input_field :first_name, :placeholder => 'Child First Name' %>
+    <%= f.input_field :last_name, :placeholder => 'Child Last Name' %>
+    <%= f.input_field :birthday, :as => :datepicker, :placeholder => 'Child Birth Day' %>
+
+    <%= f.association :schedules, input_html: {class: 'field'} %>
 
     <p><%= link_to_remove_association "remove child", f %></p>
-
-  <%= f.association :schedules, input_html: {class: 'field'} %>
-
 </fieldset>
 

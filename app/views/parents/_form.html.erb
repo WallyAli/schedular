@@ -1,13 +1,13 @@
 <%= simple_form_for @parent, input_html: { class: "form-horizontal" } do |f| %>
 <%= render 'errors' %>
    <div class="form-group center_div">
-      <%= f.input :first_name, input_html: {class: 'field'} %>
-      <%= f.input :last_name, input_html: {class: 'field'} %>
-      <%= f.input :address, input_html: {class: 'field'} %>
-      <%= f.input :city, input_html: {class: 'field'} %>
-      <%= f.input :state, input_html: {class: 'field'} %>
-      <%= f.input :zipcode, input_html: {class: 'field'} %>
-      <%= f.input :phone, input_html: {class: 'field'} %>
+      <p><%= f.input_field :first_name, :placeholder => "First Name" %></p>
+      <p><%= f.input_field :last_name, :placeholder => "Last Name" %></p>
+      <p><%= f.input_field :address, :placeholder => "Address" %></p>
+      <p><%= f.input_field :city, :placeholder => "City" %></p>
+      <p><%= f.input_field :state, :placeholder => "State" %></p>
+      <p><%= f.input_field :zipcode, :placeholder => "ZipCode" %></p>
+      <p><%= f.input_field :phone, :placeholder => "Phone" %></p>
     
 
     <h3>Add Children</h3>
