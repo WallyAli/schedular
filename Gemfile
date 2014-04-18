@@ -9,7 +9,6 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
-
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
