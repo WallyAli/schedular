@@ -38,8 +38,8 @@
     <% if @attendances_by_date[date] %>
     <ul>
       <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= time_format(attendance.time_in) %></li>
-        <li><%= time_format(attendance.time_out) %></li>
+        <li><%= link_to time_format(attendance.time_in), edit_attendance_path(attendance) %></li>
+        <li><%= link_to time_format(attendance.time_out), edit_attendance_path(attendance) %></li>
       <% end %>
     </ul>
     <% end %>
