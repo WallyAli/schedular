@@ -8,7 +8,7 @@ gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-
+gem 'best_in_place', github: 'bernat/best_in_place'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 

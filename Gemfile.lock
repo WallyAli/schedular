@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
   revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
   specs:
@@ -288,6 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.6.0)
+  best_in_place!
   better_errors
   bootstrap-datepicker-rails
   capybara (~> 2.2.1)

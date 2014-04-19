@@ -18,15 +18,15 @@
     <tbody>
       
         <tr>
-          <td ><%= @parent.case_number %></td>
-          <td ><%= @parent.first_name %></td>
-          <td ><%= @parent.middle_name %></td>
-          <td><%= @parent.last_name %></td>
-          <td><%= @parent.address %></td>
-          <td><%= @parent.city %></td>
-          <td><%= @parent.state %></td>
-          <td><%= @parent.zipcode %></td>
-          <td><%= number_to_phone(@parent.phone, area_code: true) %></td>
+          <td><%= best_in_place @parent, :case_number, :type => :input %></td>
+          <td><%= best_in_place @parent, :first_name, :type => :input %></td>
+          <td><%= best_in_place @parent, :middle_name, :type => :input %></td>
+          <td><%= best_in_place @parent, :last_name, :type => :input %></td>
+          <td><%= best_in_place @parent, :address, :type => :input %></td>
+          <td><%= best_in_place @parent, :city, :type => :input %></td>
+          <td><%= best_in_place @parent, :state, :type => :input %></td>
+          <td><%= best_in_place @parent, :zipcode, :type => :input %></td>
+          <td><%= best_in_place @parent, :phone, :type => :input %></td>
         </tr>
      
     </tbody>

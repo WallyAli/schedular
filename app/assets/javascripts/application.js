@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require turbolinks
-//= require jquery.ui.all
- //= require bootstrap-datepicker
- //= require jquery_nested_form
 //= require cocoon
 //= require dataTables/jquery.dataTables
+//= require jquery.ui.all
 //= require_tree .
 
