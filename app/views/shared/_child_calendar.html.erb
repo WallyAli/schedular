@@ -1,0 +1,19 @@
+<div id="attendances">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>   
+    <%= link_to ">", date: @date.next_month %>
+  </h2> 
+
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @attendances_by_date[date] %>
+    <ul>
+      <% @attendances_by_date[date].each do |attendance| %>
+        <li><%= link_to time_format(attendance.time_in), edit_attendance_path(attendance) %></li>
+        <li><%= link_to time_format(attendance.time_out), edit_attendance_path(attendance) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+</div>

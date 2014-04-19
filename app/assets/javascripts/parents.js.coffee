@@ -15,11 +15,10 @@ jQuery ->
     event.preventDefault();
 
 makeDatePicker = ->
-  $("input.datepicker").each (i) ->
-    $(this).datepicker
-      altFormat: "yy-mm-dd"
-      dateFormat: 'dd-mm-YYYY'
-      altField: $(this).next();
+  $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
       
 jQuery ->
   makeDatePicker();

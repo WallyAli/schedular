@@ -1,21 +1,23 @@
-<h3>Child Info.</h3>
+<p>
+  <h4>Child Info.</h4>     
+  <%=link_to 'new attendance', new_child_attendance_path(@child) %>
+</p>
+
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr class="info">
         <th>First name</th> 
         <th>Last name</th> 
-        <th>Age</th>
+        <th>Date of Birth</th>
         <th>Schedule</th>
-        <th><%=link_to 'new attendance', new_child_attendance_path(@child) %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= @child.first_name %></td>
-        <td><%= @child.last_name %></td>
-        <td><%= @child.birthday %></td>
-        <td><%= @child.time_in %></td>
+        <td><%= best_in_place @child, :first_name %></td>
+        <td><%= best_in_place @child, :last_name %></td>
+        <td><%= best_in_place @child, :birthday %></td>
      
         <% @child.schedules.each do |schedule| %>
           <td><%= schedule.name %></td>
@@ -23,28 +25,9 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div><br>
 
-
-<div id="attendances">
-  <h2 id="month">
-    <%= link_to "<", date: @date.prev_month %>
-    <%= @date.strftime("%B %Y") %>   
-    <%= link_to ">", date: @date.next_month %>
-  </h2> 
-
-  <%= calendar @date do |date| %>
-    <%= date.day %>
-    <% if @attendances_by_date[date] %>
-    <ul>
-      <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= link_to time_format(attendance.time_in), edit_attendance_path(attendance) %></li>
-        <li><%= link_to time_format(attendance.time_out), edit_attendance_path(attendance) %></li>
-      <% end %>
-    </ul>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'shared/child_data_table' %>
 
 <%= link_to 'Edit', edit_child_path(@child) %> |
 
