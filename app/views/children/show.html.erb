@@ -17,7 +17,7 @@
       <tr>
         <td><%= best_in_place @child, :first_name %></td>
         <td><%= best_in_place @child, :last_name %></td>
-        <td><%= best_in_place @child, :birthday %></td>
+        <td><%= best_in_place @child, :birthday, type: :date %></td>
      
         <% @child.schedules.each do |schedule| %>
           <td><%= schedule.name %></td>

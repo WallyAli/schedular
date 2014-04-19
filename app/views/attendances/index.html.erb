@@ -1,50 +1,27 @@
-<div id="attendances">
-  <h2 id="month">
-    <%= link_to "<", date: @date.prev_month %>
-    <%= @date.strftime("%B %Y") %>   
-    <%= link_to ">", date: @date.next_month %>
-  </h2> 
-
-  <%= calendar @date do |date| %>
-    <%= date.day %>
-    <% if @attendances_by_date[date] %>
-    <ul>
-      <% @attendances_by_date[date].each do |attendance| %>
-        <li><%= (attendance.time_in).strftime("%I:%M %p") %></li>
-        <li><%= (attendance.time_out).strftime("%I:%M %p") %></li>
-      <% end %>
-    </ul>
-    <% end %>
-  <% end %>
-</div>
 
 <h1>Listing attendances</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Time in</th>
-      <th>Time out</th>
-      <th>Child</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @attendances.each do |attendance| %>
-      <tr>
-        <td><%= attendance.time_in %></td>
-        <td><%= attendance.time_out %></td>
-        <td><%= attendance.date %></td>
-        <td><%= link_to 'Show', attendance %></td>
-        <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
-        <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="table-responsive">
+  <table class="table table-striped schedule">
+    <thead>
+      <tr class="info">
+        <th>Date</th>
+        <th>Time-In</th>
+        <th>Time-Out</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+    </thead>
+    <tbody>
+      <% @attendances.each do |attendance| %>
+        <tr>
+          <td><%= attendance.time_in %></td>
+          <td><%= attendance.time_out %></td>
+          <td><%= attendance.date %></td>
+          <td><%= link_to 'Show', attendance %></td>
+          <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
+          <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+ 
 
