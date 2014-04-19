@@ -11,7 +11,7 @@
     <tbody>
       <% @child.attendances.each do |attendance| %>
         <tr>
-          <td ><%= attendance.date %></td>
+          <td ><%= best_in_place attendance, :date %></td>
           <td ><%= time_format(attendance.time_in) %></td>
           <td><%= time_format(attendance.time_out) %></td>
         </tr>
