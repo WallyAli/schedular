@@ -13,6 +13,7 @@
         <th>State</th>
         <th>Zip-Code</th>
         <th>Phone</th>
+        <th>Email</th>
       </tr>
     </thead>
     <tbody>
@@ -25,8 +26,9 @@
           <td><%= best_in_place @parent, :address, :type => :input %></td>
           <td><%= best_in_place @parent, :city, :type => :input %></td>
           <td><%= best_in_place @parent, :state, :type => :input %></td>
-          <td><%= best_in_place @parent, :zipcode, :type => :input %></td>
-          <td><%= best_in_place @parent, :phone, :type => :input %></td>
+          <td><%= best_in_place @parent, :zipcode, type: :input %></td>
+          <td><%= best_in_place @parent, :phone, type: :input %></td>
+          <td><%= best_in_place @parent, :email, type: :input %></td>
         </tr>
      
     </tbody>

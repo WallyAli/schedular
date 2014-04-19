@@ -35,4 +35,4 @@ jQuery ->
 jQuery(document).on('page:load', makeSchedule)
 
 jQuery ->
-  $('.best_in_place').best_in_place()
+  $('.best_in_place').best_in_place();
