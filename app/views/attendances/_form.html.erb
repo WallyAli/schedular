@@ -5,12 +5,12 @@
 
     <p><%= f.time_select :time_in %></p></b>
     <p><%= f.time_select :time_out %></p>
-    <%= f.input_field :date, as: :datepicker, placeholder: 'Date' %>
+    <%= f.input_field :date, :as => :datepicker, :placeholder => 'Date' %>
     <%= f.input :time_zone, priority: /US/ %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %> |
+    <%= f.button :submit %> 
   </div>
 <% end %>
 

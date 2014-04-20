@@ -4,3 +4,14 @@
 
 jQuery ->
   $('.best_in_place').best_in_place();
+
+makeDatePicker = ->
+  $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+      
+jQuery ->
+  makeDatePicker();
+
+jQuery(document).on('page:load', makeDatePicker)

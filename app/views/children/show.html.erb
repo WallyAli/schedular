@@ -1,6 +1,7 @@
 <p>
   <h4>Child Info.</h4>     
-  <%=link_to 'new attendance', new_child_attendance_path(@child) %>
+  <%=link_to 'new attendance', new_child_attendance_path(@child) %> |
+  <%=link_to 'attendances', child_attendances_path(@child) %>
 </p>
 
 <div class="table-responsive">
