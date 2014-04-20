@@ -1,7 +1,6 @@
 <p>
   <h4>Child Info.</h4>     
-  <%=link_to 'new attendance', new_child_attendance_path(@child) %> |
-  <%=link_to 'attendances', child_attendances_path(@child) %>
+  <%=link_to 'new attendance', new_child_attendance_path(@child) %> 
 </p>
 
 <div class="table-responsive">
@@ -11,6 +10,7 @@
         <th>First Name</th> 
         <th>Last Name</th> 
         <th>Date of Birth</th>
+        <th>Age</th>
         <th>Schedule</th>
       </tr>
     </thead>
@@ -19,6 +19,7 @@
         <td><%= best_in_place @child, :first_name %></td>
         <td><%= best_in_place @child, :last_name %></td>
         <td><%= best_in_place @child, :birthday, type: :date %></td>
+        <td><%= age(@child.birthday) %></td>
      
         <% @child.schedules.each do |schedule| %>
           <td><%= schedule.name %></td>
