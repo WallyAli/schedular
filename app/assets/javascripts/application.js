@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require jquery.purr
 //= require best_in_place
 //= require turbolinks
 //= require cocoon
 //= require dataTables/jquery.dataTables
-//= require jquery.ui.all
+
 //= require_tree .
 
