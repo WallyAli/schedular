@@ -43,6 +43,7 @@
         <tr>
           <th>Full Name</th>
           <th>Birthday</th>
+          <th>Age</th>
           <th>Schedule</th>
         </tr>
       </thead>
@@ -51,6 +52,7 @@
           <tr>
             <td><%= link_to child_full_name(child), child_path(child) %></td>
             <td><%= child.birthday %></td>
+            <td><%= age(child.birthday) %></td>
           
           <% child.schedules.each do |schedule| %>
             <td><%= schedule.name %></td>
