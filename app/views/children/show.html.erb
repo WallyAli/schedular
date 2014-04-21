@@ -30,10 +30,11 @@
         <td><%= best_in_place @child, :last_name %></td>
         <td><%= best_in_place @child, :birthday, type: :date %></td>
         <td><%= age(@child.birthday) %></td>
-     
-        <% @child.schedules.each do |schedule| %>
-          <td><%= schedule.name %></td>
-        <% end %>
+        <td>
+          <% @child.schedules.each do |schedule| %>
+            <%= schedule.name %>
+          <% end %>
+        </td>
       </tr>
     </tbody>
   </table>

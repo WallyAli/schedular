@@ -4,18 +4,16 @@
       <h2><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h2>
 
       <ul>
-      <% @child.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @child.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :birthday, :as => :datepicker %>
- 
-    <%= f.submit %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :birthday, :as => :datepicker %>
+  <%= f.submit %>
  
 <% end %>
