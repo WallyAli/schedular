@@ -1,0 +1,29 @@
+<h4>Children</h4>
+
+  <div class="table-responsive">
+    <table class="table table-striped schedule">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Birthday</th>
+          <th>Age</th>
+          <th>Schedule</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @parent.children.each do |child| %>
+          <tr>
+            <td><%= link_to child_full_name(child), child_path(child) %></td>
+            <td><%= child.birthday %></td>
+            <td><%= age(child.birthday) %></td>
+          
+          <% child.schedules.each do |schedule| %>
+            <td><%= schedule.name %></td>
+          <% end %>
+           <td><%= link_to 'Delete Child', child, method: :delete, data: { confirm: 'Are you sure you want to delete this child?' } %></td>
+        <% end %>
+        </tr>
+        </tbody>
+    </table>
+  </div>

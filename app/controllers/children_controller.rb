@@ -56,8 +56,9 @@ class ChildrenController < ApplicationController
   # DELETE /children/1.json
   def destroy
     @child.destroy
+    @parent = @child.parent
     respond_to do |format|
-      format.html { redirect_to children_url }
+      format.html { redirect_to parent_path(@parent) }
       format.json { head :no_content }
     end
   end

@@ -17,7 +17,6 @@
       </tr>
     </thead>
     <tbody>
-      
         <tr>
           <td><%= best_in_place @parent, :case_number, type: :input %></td>
           <td><%= best_in_place @parent, :first_name %></td>
@@ -35,33 +34,7 @@
   </table>
 </div>
 
-<h4>Children</h4>
-
-  <div class="table-responsive">
-    <table class="table table-striped schedule">
-      <thead>
-        <tr>
-          <th>Full Name</th>
-          <th>Birthday</th>
-          <th>Age</th>
-          <th>Schedule</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @parent.children.each do |child| %>
-          <tr>
-            <td><%= link_to child_full_name(child), child_path(child) %></td>
-            <td><%= child.birthday %></td>
-            <td><%= age(child.birthday) %></td>
-          
-          <% child.schedules.each do |schedule| %>
-            <td><%= schedule.name %></td>
-          <% end %>
-        <% end %>
-        </tr>
-        </tbody>
-    </table>
-  </div>
+<%= render 'shared/parent_child' %>
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |
 <%= link_to 'Back', parents_path %> |
