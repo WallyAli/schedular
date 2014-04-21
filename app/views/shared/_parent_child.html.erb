@@ -8,7 +8,7 @@
           <th>Birthday</th>
           <th>Age</th>
           <th>Schedule</th>
-          <th></th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -18,9 +18,11 @@
             <td><%= child.birthday %></td>
             <td><%= age(child.birthday) %></td>
           
-          <% child.schedules.each do |schedule| %>
-            <td><%= schedule.name %></td>
-          <% end %>
+          <td>
+            <% child.schedules.each do |schedule| %>
+              <%= schedule.name %>
+            <% end %>
+          </td>
            <td><%= link_to 'Delete Child', child, method: :delete, data: { confirm: 'Are you sure you want to delete this child?' } %></td>
         <% end %>
         </tr>
