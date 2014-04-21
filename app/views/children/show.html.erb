@@ -1,7 +1,17 @@
-<p>
-  <h4>Child Info.</h4>     
+<div class="panel panel-info">
+   <div class="panel-heading">
+      <h3 class="panel-title">Parent Name: <%= link_to parent_full_name(@child.parent), parent_path(@child.parent) %></h3>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+   <div class="panel-heading">
+      <h3 class="panel-title">Child Information and Attendance Records</h3>
+  </div>
+</div>
+   
   <%=link_to 'new attendance', new_child_attendance_path(@child) %> 
-</p>
+
 
 <div class="table-responsive">
   <table class="table table-striped">
