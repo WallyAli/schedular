@@ -15,7 +15,7 @@
           <td><%= best_in_place attendance, :date, type: :date %></td>
           <td><%= best_in_place attendance, :time_in, display_with: lambda { |t| time_format(t).html_safe } %></td>
           <td><%= best_in_place attendance, :time_out, display_with: lambda { |t| time_format(t).html_safe } %></td>
-          <td><%= link_to 'Delete', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', attendance, method: :delete, data: { confirm: 'Are you sure you want to delete this attendance?' } %></td>
         </tr>
       <% end %>
     </tbody>

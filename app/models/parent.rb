@@ -1,5 +1,5 @@
 class Parent < ActiveRecord::Base
-	has_many :children, :inverse_of => :parent
+	has_many :children, :inverse_of => :parent, :dependent => :destroy
 	has_many :schedules, through: :children
 
 	validates_presence_of :first_name
