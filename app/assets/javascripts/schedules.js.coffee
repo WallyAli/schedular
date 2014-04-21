@@ -33,3 +33,6 @@ jQuery ->
   makeDatePicker();
 
 jQuery(document).on('page:load', makeDatePicker)
+
+jQuery ->
+  $('.best_in_place').best_in_place();
