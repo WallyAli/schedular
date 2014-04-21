@@ -22,3 +22,14 @@ jQuery ->
 	makeDataTable	
 
 jQuery(document).on('page:load', makeDataTable)
+
+makeDatePicker = ->
+  $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+      
+jQuery ->
+  makeDatePicker();
+
+jQuery(document).on('page:load', makeDatePicker)
