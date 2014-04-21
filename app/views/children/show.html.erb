@@ -1,18 +1,18 @@
 <div class="panel panel-info">
    <div class="panel-heading">
-      <h3 class="panel-title">Parent Name: <%= link_to parent_full_name(@child.parent), parent_path(@child.parent) %></h3>
+      <h3 class="panel-title">Parent Name: <%= link_to parent_full_name(@child.parent), parent_path(@child.parent) %></h3> 
   </div>
 </div>
 
 <div class="panel panel-primary">
    <div class="panel-heading">
-      <h3 class="panel-title">Child Information and Attendance Records</h3>
+      <h3 class="panel-title">
+        Child Information and Attendance Records
+        <%=link_to 'New attendance', new_child_attendance_path(@child), class: 'pull-right' %>
+      </h3> 
   </div>
 </div>
    
-  <%=link_to 'new attendance', new_child_attendance_path(@child) %> 
-
-
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -39,7 +39,9 @@
   </table>
 </div><br>
 
-<%= render 'shared/child_data_table' %>
+<p><%= render 'shared/child_data_table' %></p></br>
 
-
-
+<div class='panel-footer'>
+  <%= link_to 'Back', parent_path(@child.parent), class: 'btn btn-primary' %> |
+  <%= link_to 'Delete', @child, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete this child?' } %>
+</div>
