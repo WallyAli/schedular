@@ -8,7 +8,7 @@ class Parent < ActiveRecord::Base
 	validates :city, presence: true
 	validates :state, presence: true
 	validates :zipcode, presence: true
-	validates :case_number, presence: true
+	validates :case_number, presence: true, uniqueness: true
 
 	accepts_nested_attributes_for :children, allow_destroy: true
 end

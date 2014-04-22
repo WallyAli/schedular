@@ -12,6 +12,11 @@ describe Parent do
 		expect(build(:parent)).to be_valid
 	end
 
+	it "returns a parent's full name as a string" do
+		parent = Parent.new(first_name: 'Abdiweli', last_name: 'Ali')
+		expect(parent.parent_full_name(parent)).to eq 'Abdiweli Ali'
+	end
+
 	it 'is invalid without first_name' do
 		expect(build(:parent, first_name: nil)).to have(1).errors_on(:first_name)
 	end
@@ -37,5 +42,10 @@ describe Parent do
 
 	it 'is invalid without case_number' do 
 		expect(build(:parent, case_number: nil)).to have(1).errors_on(:case_number)
+	end
+
+	it "is invalid with a duplicate case_number" do
+		create(:parent, case_number: '123456')
+		expect(build(:parent, case_number: '123456')).to have(1).errors_on(:case_number)
 	end
 end
