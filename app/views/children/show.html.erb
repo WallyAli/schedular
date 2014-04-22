@@ -21,6 +21,7 @@
         <th>Last Name</th> 
         <th>Date of Birth</th>
         <th>Age</th>
+        <th>Gender</th>
         <th>Schedule</th>
       </tr>
     </thead>
@@ -30,6 +31,7 @@
         <td><%= best_in_place @child, :last_name %></td>
         <td><%= best_in_place @child, :birthday, type: :date %></td>
         <td><%= age(@child.birthday) %></td>
+         <td><%= best_in_place @child, :gender,type: :select, collection: [[1, "Female"], [2, "Male"]] %></td>
         <td>
           <% @child.schedules.each do |schedule| %>
             <%= schedule.name %>

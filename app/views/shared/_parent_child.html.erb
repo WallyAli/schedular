@@ -11,6 +11,7 @@
           <th>Full Name</th>
           <th>Birthday</th>
           <th>Age</th>
+          <th>Gender</th>
           <th>Schedule</th>
           <th>Action</th>
         </tr>
@@ -21,7 +22,7 @@
             <td><%= link_to child_full_name(child), child_path(child) %></td>
             <td><%= child.birthday %></td>
             <td><%= age(child.birthday) %></td>
-          
+            <td><%= best_in_place child, :gender,type: :select, collection: [[1, "Female"], [2, "Male"]] %></td> 
           <td>
             <% child.schedules.each do |schedule| %>
               <%= schedule.name %>

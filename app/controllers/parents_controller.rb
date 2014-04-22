@@ -73,7 +73,7 @@ class ParentsController < ApplicationController
       params.require(:parent).permit(:case_number, :first_name, :middle_name, :last_name, 
                                       :address, :phone, :city, :state, :zipcode, :email, 
                                       children_attributes: [ 
-                                      :id, :first_name, :last_name, :birthday,
+                                      :id, :first_name, :last_name, :birthday, :gender,
                                       :_destroy, {:schedule_ids => []}],
                                       schedule_attributes: [:id, :name])
     end
