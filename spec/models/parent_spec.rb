@@ -12,10 +12,10 @@ describe Parent do
 		expect(build(:parent)).to be_valid
 	end
 
-	it "returns a parent's full name as a string" do
-		parent = Parent.new(first_name: 'Abdiweli', last_name: 'Ali')
-		expect(parent.parent_full_name(parent)).to eq 'Abdiweli Ali'
-	end
+	# it "returns a parent's full name as a string" do
+	# 	parent = Parent.new(first_name: 'Abdiweli', last_name: 'Ali')
+	# 	expect(parent.parent_full_name(parent)).to eq 'Abdiweli Ali'
+	# end
 
 	it 'is invalid without first_name' do
 		expect(build(:parent, first_name: nil)).to have(1).errors_on(:first_name)
