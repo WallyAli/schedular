@@ -46,7 +46,7 @@ group :development, :test do
   gem 'jazz_hands'
   gem 'better_errors'
   gem 'quiet_assets'
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.2.1"
   gem 'faker', '~> 1.3.0'
 end
 
