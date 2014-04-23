@@ -9,5 +9,9 @@ FactoryGirl.define do
     state { Faker::Address.state }
     zipcode { Faker::Address.zip }
     case_number { Faker::Number.number(6) }
+
+    factory :invalid_parent do
+		first_name nil
+	end
   end
 end
