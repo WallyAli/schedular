@@ -1,7 +1,10 @@
 Scheduler::Application.routes.draw do
 
-  
-  
+  devise_scope :user do
+    get "register", to: "devise/registrations#new"
+    get "login", to: "devise/sessions#new"
+    get "logout", to: "devise/sessions#destroy"
+  end
 
   devise_for :users
   resources :schedules

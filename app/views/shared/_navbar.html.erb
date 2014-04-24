@@ -19,9 +19,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li></li>
-        <li><li>
-        <li><li>
+       <% if  user_signed_in? %>
+              <%= link_to current_user.email, edit_user_registration_path %> |
+              <%= link_to "Log Out", logout_path %>
+            <% else %>
+              <%= link_to "Register", register_path  %> |
+              <%= link_to "Log In", login_path %>
+            <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
