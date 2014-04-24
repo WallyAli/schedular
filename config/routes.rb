@@ -3,6 +3,7 @@ Scheduler::Application.routes.draw do
   
   
 
+  devise_for :users
   resources :schedules
   resources :parents, shallow: true do 
     resources :children, shallow: true do

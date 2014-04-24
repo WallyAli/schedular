@@ -11,6 +11,7 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem 'best_in_place', github: 'bernat/best_in_place'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
