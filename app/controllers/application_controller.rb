@@ -6,9 +6,5 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_filter :authenticate_user!, except: [ :index, :show ]
 
-   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u|
-     u.permit(:first_name, :last_name, :email, 
-     		  :password, :password_confirmation) } 
- end
+
 end
