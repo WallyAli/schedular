@@ -85,7 +85,7 @@ Scheduler::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: ENV["GMAIL_DOMAIN"],
+    domain: 'gentle-hamlet-8589.herokuapp.com',
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: 'abdishwak@gmail.com',
