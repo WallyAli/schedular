@@ -89,7 +89,7 @@ Scheduler::Application.configure do
     domain: "gentle-hamlet-8589.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["abdishwak@gmail.com"],
+    password: ENV["abdiweli"]
   }
 end
