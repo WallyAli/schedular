@@ -88,8 +88,8 @@ Scheduler::Application.configure do
     domain: ENV["GMAIL_DOMAIN"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: 'abdishwak@gmail.com',
+    password: 'mysecretpassword'
   }
 
   config.action_mailer.default_url_options = { :host => 'gentle-hamlet-8589.herokuapp.com' }
