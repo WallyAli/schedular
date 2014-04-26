@@ -13,6 +13,7 @@ gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'devise'
 gem 'pg'
+gem 'figaro'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

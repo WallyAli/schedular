@@ -16,3 +16,5 @@
 /tmp
 
 /config/initializers/app_env_vars.rb
+# Ignore application configuration
+/config/application.yml
