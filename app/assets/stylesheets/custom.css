@@ -14,3 +14,20 @@
 .registrationtag {
 	margin-left:220px;
 }
+
+#error_explanation {
+  color: #f00;
+  margin-left: 220px;
+
+}
+
+.devise-errors {
+	position: fixed;
+	top: 30px;
+	right: 100px;
+	width: 250px;
+	padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}

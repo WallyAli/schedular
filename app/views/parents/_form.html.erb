@@ -2,16 +2,16 @@
   <%= simple_form_for @parent do |f| %>
   <%= render 'errors' %>
     <div class="form-group center_div">
-      <p><%= f.input_field :case_number, :placeholder => "Case Number" %></p>
-      <p><%= f.input_field :first_name, :placeholder => "First Name" %></p>
-      <p><%= f.input_field :middle_name, :placeholder => "Middle Name" %></p>
-      <p><%= f.input_field :last_name, :placeholder => "Last Name" %></p>
-      <p><%= f.input_field :address, :placeholder => "Address" %></p>
-      <p><%= f.input_field :city, :placeholder => "City" %></p>
-      <p><%= f.input_field :state, :placeholder => "State" %></p>
-      <p><%= f.input_field :zipcode, :placeholder => "ZipCode" %></p>
-      <p><%= f.input_field :phone, :placeholder => "Phone" %></p>
-      <p><%= f.input_field :email, :placeholder => "Email" %></p>
+      <p><%= f.input :case_number, :placeholder => "Case Number" %></p>
+      <p><%= f.input :first_name, :placeholder => "First Name" %></p>
+      <p><%= f.input :middle_name, :placeholder => "Middle Name" %></p>
+      <p><%= f.input :last_name, :placeholder => "Last Name" %></p>
+      <p><%= f.input :address, :placeholder => "Address" %></p>
+      <p><%= f.input :city, :placeholder => "City" %></p>
+      <p><%= f.input :state, :placeholder => "State" %></p>
+      <p><%= f.input :zipcode, :placeholder => "ZipCode" %></p>
+      <p><%= f.input :phone, :placeholder => "Phone" %></p>
+      <p><%= f.input :email, :placeholder => "Email" %></p>
       
       <%= f.simple_fields_for :children do |child| %>
         <%= render 'child_fields', f: child %>

@@ -1,11 +1,5 @@
   <% if @parent.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
-
-      <ul>
-      <% @parent.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <h4><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h4>
     </div>
   <% end %>
