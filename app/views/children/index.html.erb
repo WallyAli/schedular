@@ -18,8 +18,8 @@
     <tbody>
       <% @children.each do |child| %>
         <tr>
-          <td ><%= child.first_name %></td>
-          <td ><%= child.last_name %></td>
+          <td ><%= link_to child.first_name, child %></td>
+          <td ><%= link_to child.last_name, child %></td>
           <td ><%= child.birthday %></td>
           <td ><%= age(child.birthday) %></td>
           <td ><%= child.gender %></td>
