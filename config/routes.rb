@@ -1,5 +1,7 @@
 Scheduler::Application.routes.draw do
 
+  get '/children', to: 'children#index'
+
   devise_scope :user do
     get "register", to: "devise/registrations#new"
     get "login", to: "devise/sessions#new"
