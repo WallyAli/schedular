@@ -8,6 +8,7 @@
   <table class="table table-striped schedule">
     <thead>
       <tr class="info">
+        <th>Parent Name</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Date of Birth</th>
@@ -18,8 +19,9 @@
     <tbody>
       <% @children.each do |child| %>
         <tr>
+          <td ><%= link_to parent_full_name(child.parent), parent_path(child.parent) %></td>
           <td ><%= link_to child.first_name, child %></td>
-          <td ><%= link_to child.last_name, child %></td>
+          <td ><%= child.last_name %></td>
           <td ><%= child.birthday %></td>
           <td ><%= age(child.birthday) %></td>
           <td ><%= child.gender %></td>
