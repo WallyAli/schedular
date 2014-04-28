@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425042307) do
+ActiveRecord::Schema.define(version: 20140424062750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "attendaces_children", id: false, force: true do |t|
-    t.integer "attendace_id", null: false
-    t.integer "child_id",     null: false
-  end
 
   create_table "attendances", force: true do |t|
     t.string   "child_id"
@@ -65,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140425042307) do
     t.datetime "updated_at"
     t.string   "city"
     t.string   "state"
-    t.string   "zipcode"
+    t.string   "zipcode",     limit: nil
     t.string   "middle_name"
     t.string   "email"
     t.string   "case_number"

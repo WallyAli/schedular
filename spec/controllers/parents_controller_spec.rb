@@ -22,7 +22,8 @@ describe ParentsController do
 		it { expect(response).to render_template :show } 
 	end
 
-	describe 'Parent#create' do 
+	describe 'Parent#create' do
+		login_user 
 
 		context 'with valid attributes' do
 
@@ -52,6 +53,8 @@ describe ParentsController do
 	end
 
 	describe 'PATCH #update' do
+		login_user
+
 		before :each do
 			@parent = create(:parent,
 			first_name: 'Lawrence', last_name: 'Smith')
@@ -94,6 +97,8 @@ describe ParentsController do
 	end
 
 	describe 'DELETE #destroy' do
+		login_user
+		
 		before :each do
 			@parent = create(:parent)
 		end
