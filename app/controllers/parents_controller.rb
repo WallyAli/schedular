@@ -15,7 +15,7 @@ class ParentsController < ApplicationController
   # GET /parents/new
   def new
     @parent = Parent.new
-    @parent.children.build
+    3.times { @parent.children.build }
   end
 
   # GET /parents/1/edit
