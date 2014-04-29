@@ -1,59 +1,46 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
-  # GET /children
-  # GET /children.json
   def index
     @children = Child.all
   end
 
-  # GET /children/1
-  # GET /children/1.json
   def show
     @attendances = @child.attendances
   end
 
-  # GET /children/new
   def new
     @child = Child.new
   end
 
-  # GET /children/1/edit
   def edit
   end
 
-  # POST /children
-  # POST /children.json
   def create
     @child = Child.new(child_params)
-
     respond_to do |format|
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
         format.json { render action: 'show', status: :created, location: @child }
       else
-        format.html { render action: 'new' }
+        format.html { render :new }
         format.json { render json: @child.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /children/1
-  # PATCH/PUT /children/1.json
   def update
     respond_to do |format|
       if @child.update(child_params)
         format.html { redirect_to @child, notice: 'Child was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render :edit }
         format.json { render json: @child.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /children/1
-  # DELETE /children/1.json
   def destroy
     @child.destroy
     @parent = @child.parent
@@ -64,13 +51,15 @@ class ChildrenController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_child
       @child = Child.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def child_params
-      params.require(:child).permit(:first_name, :last_name, :birthday, :parent_id, :time_in, :time_out, :gender, {:schedule_ids => []})
+      params.require(:child).permit(:first_name, :last_name, 
+                                    :birthday, :parent_id, 
+                                    :time_in, :time_out, :gender, 
+                                    {:schedule_ids => []})
     end
 end
