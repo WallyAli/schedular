@@ -44,7 +44,7 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to parents_path }
+      format.html { redirect_to child_path(@attendance.child) }
       format.json { head :no_content }
     end
   end
