@@ -1,5 +1,5 @@
   <% if @parent.errors.any? %>
     <div id="error_explanation">
-      <h4><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h4>
+      <h4><%= pluralize(error_count(@parent), "error") %> prohibited this parent from being saved:</h4>
     </div>
   <% end %>

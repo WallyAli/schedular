@@ -1,10 +1,10 @@
 
   <fieldset class="nested-fields">
 
-    <%= f.input :first_name, placeholder: 'Child First Name' %></br>
-    <%= f.input :last_name, placeholder: 'Child Last Name' %></br>
-    <%= f.input :gender, collection: [:Male, :Female], prompt: true %></br>
-    <%= f.input :birthday, input_html: {class: 'datepicker'} %></br>
+    <%= f.input :first_name, label: false, placeholder: 'Child First Name' %>
+    <%= f.input :last_name, label: false, placeholder: 'Child Last Name' %>
+    <%= f.input :gender, label: false, collection: [:Male, :Female], prompt: true %>
+    <%= f.input :birthday, label: false, input_html: {class: 'datepicker'}, placeholder: 'Date of Birth' %>
 
     <%= f.association :schedules, input_html: {class: 'field'} %>
 

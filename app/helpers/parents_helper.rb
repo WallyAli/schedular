@@ -9,4 +9,14 @@ module ParentsHelper
 		number_to_phone(phone)
 	end
 
+	def error_count(parent)
+		errors_array = []
+		errors_array << parent.errors.count
+		parent.children.each do |child|
+			errors_array << child.errors.count
+		end
+		errors_array.reduce(:+)
+	end
+
 end
+
