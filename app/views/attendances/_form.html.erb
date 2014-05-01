@@ -3,8 +3,8 @@
     <%= f.error_notification %>
 
     <div class="center_div field">
-      <p><%= f.time_select :time_in %></p></b>
-      <p><%= f.time_select :time_out %></p>
+      <p><%= f.time_select :time_in, {ampm: true} %></p></b>
+      <p><%= f.time_select :time_out, {ampm: true} %></p>
       <%= f.input_field :date, :as => :datepicker, :placeholder => 'Date' %>
       <%= f.submit 'Submit',  :class => 'btn btn-primary' %>
     </div>
