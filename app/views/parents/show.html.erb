@@ -4,44 +4,45 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr class="info">
-        <th>Case Number</th>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
-        <th>Address</th>
-        <th>city</th>
-        <th>State</th>
-        <th>Zip-Code</th>
-        <th>Phone</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><%= best_in_place @parent, :case_number, type: :input %></td>
-          <td><%= best_in_place @parent, :first_name %></td>
-          <td><%= best_in_place @parent, :middle_name %></td>
-          <td><%= best_in_place @parent, :last_name %></td>
-          <td><%= best_in_place @parent, :address %></td>
-          <td><%= best_in_place @parent, :city %></td>
-          <td><%= best_in_place @parent, :state %></td>
-          <td><%= best_in_place @parent, :zipcode %></td>
-          <td><%= best_in_place @parent, :phone %></td>
-          <td><%= best_in_place @parent, :email %></td>
+<% cache @parent do %>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="info">
+          <th>Case Number</th>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>city</th>
+          <th>State</th>
+          <th>Zip-Code</th>
+          <th>Phone</th>
+          <th>Email</th>
         </tr>
-     
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= best_in_place @parent, :case_number, type: :input %></td>
+            <td><%= best_in_place @parent, :first_name %></td>
+            <td><%= best_in_place @parent, :middle_name %></td>
+            <td><%= best_in_place @parent, :last_name %></td>
+            <td><%= best_in_place @parent, :address %></td>
+            <td><%= best_in_place @parent, :city %></td>
+            <td><%= best_in_place @parent, :state %></td>
+            <td><%= best_in_place @parent, :zipcode %></td>
+            <td><%= best_in_place @parent, :phone %></td>
+            <td><%= best_in_place @parent, :email %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><%= render 'shared/parent_child' %></p></br>
 
-<p><%= render 'shared/parent_child' %></p></br>
 
-<div class="panel-footer">
-  <%= link_to 'Edit', edit_parent_path(@parent), class: 'btn btn-primary' %> |
-  <%= link_to 'Back', parents_path, class: 'btn btn-primary' %> |
-  <%= link_to 'Delete Family', @parent, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete family information?' } %>
-</div>
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_parent_path(@parent), class: 'btn btn-primary' %> |
+    <%= link_to 'Back', parents_path, class: 'btn btn-primary' %> |
+    <%= link_to 'Delete Family', @parent, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete family information?' } %>
+  </div>
+<% end %>
