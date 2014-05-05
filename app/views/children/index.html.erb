@@ -1,32 +1,34 @@
-<div class="panel panel-primary">
-   <div class="panel-heading">
-      <h3 class="panel-title">List of All Children</h3>
+<% cache @children do %>
+  <div class="panel panel-primary">
+     <div class="panel-heading">
+        <h3 class="panel-title">List of All Children</h3>
+    </div>
   </div>
-</div>
 
-<div class="table-responsive">
-  <table class="table table-striped schedule">
-    <thead>
-      <tr class="info">
-        <th>Parent Name</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Date of Birth</th>
-        <th>Age</th>
-        <th>Gender</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @children.each do |child| %>
-        <tr>
-          <td ><%= link_to parent_full_name(child.parent), parent_path(child.parent) %></td>
-          <td ><%= link_to child.first_name, child %></td>
-          <td ><%= child.last_name %></td>
-          <td ><%= child.birthday %></td>
-          <td ><%= age(child.birthday) %></td>
-          <td ><%= child.gender %></td>
+  <div class="table-responsive">
+    <table class="table table-striped schedule">
+      <thead>
+        <tr class="info">
+          <th>Parent Name</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Age</th>
+          <th>Gender</th>
         </tr>
-      <% end %>
-    </tbody>
-  </ta
+      </thead>
+      <tbody>
+        <% @children.each do |child| %>
+          <tr>
+            <td ><%= link_to parent_full_name(child.parent), parent_path(child.parent) %></td>
+            <td ><%= link_to child.first_name, child %></td>
+            <td ><%= child.last_name %></td>
+            <td ><%= child.birthday %></td>
+            <td ><%= age(child.birthday) %></td>
+            <td ><%= child.gender %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
 
