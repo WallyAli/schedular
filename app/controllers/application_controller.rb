@@ -6,5 +6,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!, except: [ :index, :show ]
 
+  before_filter :miniprofiler
 
+private
+
+	def miniprofiler
+	  Rack::MiniProfiler.authorize_request 
+	end
 end
