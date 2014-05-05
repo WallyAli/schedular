@@ -1,34 +1,36 @@
-<div class="panel panel-primary">
-   <div class="panel-heading">
-      <h3 class="panel-title">
-        <%= @schedule.name %> Schedule | Date:_________________________
-      </h3>
+<% cache @schedule do %>
+  <div class="panel panel-primary">
+     <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @schedule.name %> Schedule | Date:_________________________
+        </h3>
+    </div>
   </div>
-</div>
 
-<div class="table-responsive">
-  <table class="schedule table-bordered">
-    <thead>
-      <tr class="info">
-        <th>Parent Name</th>
-        <th>Child Name</th> 
-        <th>Time-In</th>
-        <th>Sign-In</th>
-        <th>Time-Out</th>
-        <th>Sign-Out</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @schedule.children.each do |child| %>
-        <tr>
-          <td><%= link_to parent_full_name(child.parent), parent_path(child.parent) %></td>
-          <td ><%= link_to child_full_name(child), child %></td> 
-          <td ></td> 
-          <td ></td> 
-          <td ></td>
-          <td ></td>
+  <div class="table-responsive">
+    <table class="schedule table-bordered">
+      <thead>
+        <tr class="info">
+          <th>Parent Name</th>
+          <th>Child Name</th> 
+          <th>Time-In</th>
+          <th>Sign-In</th>
+          <th>Time-Out</th>
+          <th>Sign-Out</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @schedule.children.each do |child| %>
+          <tr>
+            <td><%= link_to parent_full_name(child.parent), parent_path(child.parent) %></td>
+            <td ><%= link_to child_full_name(child), child %></td> 
+            <td ></td> 
+            <td ></td> 
+            <td ></td>
+            <td ></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

@@ -1,37 +1,38 @@
-
-<div id="accordion">
-  <h3>
-    <% @schedules.each do |schedule| %>
-      <%= link_to schedule.name, schedule %>
-  </h3>
-  <h3>
-    <div class="table-responsive">
-      <table class="schedule">
-        <thead>
-          <tr class="info">
-            <th>Child Name</th> 
-            
-            <th>Time-In</th>
-            <th>Sign-In</th>
-            <th>Time-Out</th>
-            <th>Sign-Out</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% schedule.children.each do |child| %>
-            <tr>
-              <td ><%= link_to child_full_name(child), child %></td> 
-              <td ><%= child.time_in %></td> 
-              <td ><%= child.time_out %></td> 
-              <td ></td>
-              <td ></td>
+<% cache @children do %>
+  <div id="accordion">
+    <h3>
+      <% @schedules.each do |schedule| %>
+        <%= link_to schedule.name, schedule %>
+    </h3>
+    <h3>
+      <div class="table-responsive">
+        <table class="schedule">
+          <thead>
+            <tr class="info">
+              <th>Child Name</th> 
+              
+              <th>Time-In</th>
+              <th>Sign-In</th>
+              <th>Time-Out</th>
+              <th>Sign-Out</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </h3>
-  <% end %>
-</div>
+          </thead>
+
+          <tbody>
+            <% schedule.children.each do |child| %>
+              <tr>
+                <td ><%= link_to child_full_name(child), child %></td> 
+                <td ><%= child.time_in %></td> 
+                <td ><%= child.time_out %></td> 
+                <td ></td>
+                <td ></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </h3>
+    <% end %>
+  </div>
+<% end %>
 
