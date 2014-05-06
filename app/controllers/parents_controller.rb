@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
   caches_action :index, :unless => :current_user, :cache_path => Proc.new { |c| c.params }
-  before_action :expire_caching, only: :index
+  before_action :expire_caching, only: [:create, :update, :destroy]
   
   def index
     @parents = Parent.all

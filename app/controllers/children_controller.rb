@@ -1,5 +1,7 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
+  caches_action :index
+  before_action :expire_caching, only: [:create, :update, :destroy]
 
   def index
     @children = Child.all
@@ -52,6 +54,10 @@ class ChildrenController < ApplicationController
 
   private
 
+    def expire_caching
+      expire_action :action => :index
+    end
+    
     def set_child
       @child = Child.find(params[:id])
     end
