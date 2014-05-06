@@ -1,6 +1,8 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
-
+  caches_action :index, :unless => :current_user, :cache_path => Proc.new { |c| c.params }
+  before_action :expire_caching, only: :index
+  
   def index
     @parents = Parent.all
   end
@@ -41,7 +43,7 @@ class ParentsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy 
     @parent.destroy
     respond_to do |format|
       format.html { redirect_to parents_url }
@@ -50,6 +52,10 @@ class ParentsController < ApplicationController
   end
 
   private
+
+    def expire_caching
+      expire_action :action => :index
+    end
 
     def set_parent
       @parent = Parent.find(params[:id])

@@ -67,5 +67,6 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'actionpack-action_caching'
 gem 'rack-mini-profiler'
 
