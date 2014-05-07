@@ -21,6 +21,11 @@
 
 }
 
+.field_size {
+	width: 500px;
+	margin-left:220px;
+}
+
 .devise-errors {
 	position: fixed;
 	top: 30px;
