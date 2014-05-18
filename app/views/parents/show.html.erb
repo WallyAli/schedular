@@ -41,8 +41,11 @@
 
 
   <div class="panel-footer">
-    <%= link_to 'Edit', edit_parent_path(@parent), class: 'btn btn-primary' %> |
-    <%= link_to 'Back', parents_path, class: 'btn btn-primary' %> |
-    <%= link_to 'Delete Family', @parent, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete family information?' } %>
+    <%= link_to 'Back', parents_path, class: 'btn btn-primary' %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_parent_path(@parent), class: 'btn btn-primary' %>
+      <%= link_to 'Delete Family', @parent, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete family information?' } %>
+    <% end %>
   </div>
 <% end %>
