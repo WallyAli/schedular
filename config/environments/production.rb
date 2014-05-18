@@ -92,6 +92,6 @@ Scheduler::Application.configure do
     password: ENV['GMAIL_PASSWORD']
   }
 
-  config.action_mailer.default_url_options = { :host => 'gentle-hamlet-8589.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: ENV['MAILER_HOST'] }
 
 end

@@ -8,8 +8,8 @@ development:
   database: scheduler_development
   pool: 5
   timeout: 10000
-  username: wikiful
-  password: 1234
+  username: <%= ENV['postgres_user'] %>
+  password: <%= ENV['postgres_password'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,13 +19,13 @@ test:
   database: scheduler_test
   pool: 5
   timeout: 10000
-  username: wikiful
-  password: 1234
+  username: <%= ENV['postgres_user'] %>
+  password: <%= ENV['postgres_password'] %>
 
 production:
   adapter: postgresql
   database: scheduler_production
   pool: 5
   timeout: 10000
-  username: wikiful
-  password: 1234
+  username: <%= ENV['postgres_user'] %>
+  password: <%= ENV['postgres_password'] %>
