@@ -41,5 +41,5 @@ Scheduler::Application.configure do
     password: ENV['GMAIL_PASSWORD']
   }
   
-  config.action_mailer.default_url_options = { host: ENV[MAILER_HOST] }
+  config.action_mailer.default_url_options = { host: ENV['MAILER_HOST'] }
 end
