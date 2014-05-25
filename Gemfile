@@ -8,7 +8,7 @@ gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-gem 'best_in_place', github: 'bernat/best_in_place', branch: "rails-4"
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 gem 'devise'
 gem 'pg'
