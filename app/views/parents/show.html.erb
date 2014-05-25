@@ -38,7 +38,7 @@
     </table>
   </div>
   <p><%= render 'shared/parent_child' %></p></br>
-
+<% end %>
 
   <div class="panel-footer">
     <%= link_to 'Back', parents_path, class: 'btn btn-primary' %>
@@ -48,4 +48,3 @@
       <%= link_to 'Delete Family', @parent, class: 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure you want to delete family information?' } %>
     <% end %>
   </div>
-<% end %>
