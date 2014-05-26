@@ -1,6 +1,6 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
-  caches_action :index, :unless => :current_user, :cache_path => Proc.new { |c| c.params }
+  caches_action [:index, :show], :unless => :current_user, :cache_path => Proc.new { |c| c.params }
   before_action :expire_caching, only: [:create, :update, :destroy]
   
   def index
@@ -36,10 +36,10 @@ class ParentsController < ApplicationController
     respond_to do |format|
       if @parent.update(parent_params)
         format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
-        format.json { head :no_content }
+        format.json { respond_with_bip(@parent) }
       else
         format.html { render :edit }
-        format.json { render json: @parent.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@parent) }
       end
     end
   end
@@ -55,7 +55,7 @@ class ParentsController < ApplicationController
   private
 
     def expire_caching
-      expire_action :action => :index
+      expire_action action: [:index, :show]
     end
 
     def set_parent
