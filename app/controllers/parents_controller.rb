@@ -22,6 +22,7 @@ class ParentsController < ApplicationController
     @parent = Parent.new(parent_params)
     respond_to do |format|
       if @parent.save
+        ParentMailer.registration_confirmation(@parent).deliver
         format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
         format.json { render action: 'show', status: :created, location: @parent }
       else

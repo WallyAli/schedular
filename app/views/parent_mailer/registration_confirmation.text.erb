@@ -1,0 +1,20 @@
+Hi <%= @parent.first_name %>,
+
+Thank you for registering with us.
+We are grateful for you choosing us.
+---------------------------------------------
+Here are the family members registered with us.
+
+parent:<%= @parent.first_name %> <%= @parent.last_name %>
+
+children:
+
+<% if @parent.children.count > 0 %>
+  
+    <% @parent.children.each do |child| %>
+      <%= child.first_name %> ;
+    <% end %>
+ 
+<% else %>
+  No children registered
+<% end %>

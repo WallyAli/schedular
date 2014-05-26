@@ -1,0 +1,19 @@
+<p>Hi <%= @parent.first_name %>,</p> 
+
+<p>Thank you for registering with us.</p>
+<p>We are grateful for you choosing us.</p>
+
+<p>Here are the family members registered with us</p>
+
+<p>parent:<%= @parent.first_name %> <%= @parent.last_name %></p>
+<p>children:</p>
+
+<% if @parent.children.count > 0 %>
+  <ol>
+    <% @parent.children.each do |child| %>
+      <li><%= child.first_name %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>No children registered</p>
+<% end %>
