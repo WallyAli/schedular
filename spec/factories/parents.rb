@@ -10,6 +10,7 @@ FactoryGirl.define do
     zipcode { Faker::Address.zip }
     case_number { Faker::Number.number(6) }
     phone { Faker::PhoneNumber.cell_phone }
+    sequence(:email) { |n| "person#{n}@example.com" }
     factory :invalid_parent do
 		first_name nil
 	end

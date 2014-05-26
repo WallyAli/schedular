@@ -9,6 +9,6 @@ class ParentMailer < ActionMailer::Base
   def registration_confirmation(parent)
     @parent = parent
 
-    mail to: @parent.email, subject: "you are now registered with us"
+    mail to: @parent.email, subject: "Registration confirmation"
   end
 end
