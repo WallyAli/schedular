@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424062750) do
+ActiveRecord::Schema.define(version: 20140527050556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "attendaces_children", id: false, force: true do |t|
+    t.integer "attendace_id", null: false
+    t.integer "child_id",     null: false
+  end
 
   create_table "attendances", force: true do |t|
     t.string   "child_id"
@@ -51,6 +74,13 @@ ActiveRecord::Schema.define(version: 20140424062750) do
   add_index "children_schedules", ["child_id", "schedule_id"], name: "index_children_schedules_on_child_id_and_schedule_id", using: :btree
   add_index "children_schedules", ["schedule_id", "child_id"], name: "index_children_schedules_on_schedule_id_and_child_id", using: :btree
 
+  create_table "days", force: true do |t|
+    t.string   "name"
+    t.integer  "tour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "parents", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -60,10 +90,23 @@ ActiveRecord::Schema.define(version: 20140424062750) do
     t.datetime "updated_at"
     t.string   "city"
     t.string   "state"
-    t.string   "zipcode",     limit: nil
+    t.string   "zipcode"
     t.string   "middle_name"
     t.string   "email"
     t.string   "case_number"
+  end
+
+  create_table "reservations", force: true do |t|
+    t.integer  "passengers"
+    t.boolean  "home_pickup",      default: false
+    t.boolean  "home_dropoff",     default: false
+    t.text     "home_address"
+    t.integer  "zipcode"
+    t.string   "telephone_number"
+    t.integer  "tour_id"
+    t.integer  "day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "schedules", force: true do |t|
@@ -73,19 +116,36 @@ ActiveRecord::Schema.define(version: 20140424062750) do
     t.string   "date"
   end
 
+  create_table "tours", force: true do |t|
+    t.string   "name"
+    t.integer  "amount"
+    t.string   "time"
+    t.string   "location"
+    t.string   "duration"
+    t.text     "description"
+    t.string   "highlights"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
+  end
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
+    t.boolean  "approved"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -2,7 +2,8 @@ class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
   caches_action :index
   before_action :expire_caching, only: [:create, :update, :destroy]
-
+  load_and_authorize_resource
+  
   def index
     @children = Child.all
   end

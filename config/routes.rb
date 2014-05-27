@@ -1,5 +1,8 @@
 Scheduler::Application.routes.draw do
 
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   get '/children', to: 'children#index'
 
   devise_scope :user do

@@ -1,8 +1,10 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
-  caches_action [:index, :show], :unless => :current_user, :cache_path => Proc.new { |c| c.params }
+  caches_action :index, :unless => :current_user, :cache_path => Proc.new { |c| c.params }
   before_action :expire_caching, only: [:create, :update, :destroy]
-  
+
+  load_and_authorize_resource
+
   def index
     @parents = Parent.all
   end
@@ -55,7 +57,7 @@ class ParentsController < ApplicationController
   private
 
     def expire_caching
-      expire_action action: [:index, :show]
+      expire_action action: :index
     end
 
     def set_parent

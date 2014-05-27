@@ -1,6 +1,7 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
   before_action :load_child, only: [:new, :create, :index]
+  load_and_authorize_resource
   
   def index
     @attendances = @child.attendances
