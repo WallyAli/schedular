@@ -7,13 +7,8 @@ class Ability
     can :read, :all                   # allow everyone to read everything
 
     
-    # user ||= User.new # guest user (not logged in)
-    # if user.admin
-    #     can :read, :all
-    # end
-
-    admin = Admin.new
-    if admin
+    user ||= User.new # guest user (not logged in)
+    if user.admin
         can :manage, :all
     end
 
