@@ -7,13 +7,16 @@ class Ability
     can :read, :all                   # allow everyone to read everything
 
     
-    user ||= User.new # guest user (not logged in)
-    if user.admin?
+    # user ||= User.new # guest user (not logged in)
+    # if user.admin
+    #     can :read, :all
+    # end
+
+    admin = Admin.new
+    if admin
         can :manage, :all
-    else
-        can :read, :all
     end
-    
+
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
